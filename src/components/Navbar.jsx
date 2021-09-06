@@ -23,7 +23,7 @@ class BootstrapNavbar extends React.Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">
                     <Nav.Link className="menu__link" href="/">
-                      Home
+                      Homesssssssssssss
                     </Nav.Link>
                     <Nav.Link className="menu__link" href="/result">
                       Results

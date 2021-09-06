@@ -27,6 +27,23 @@
 .App-link {
   color: #61dafb;
 }
+.posts__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1em;
+  text-align: left;
+  display: block;
+  height: 49rem;
+}
+.posts__cell {
+  width: 100%;
+}
+.posts__item {
+  padding: 15px 20px 10px 20px;
+  border: 1px solid #aeaeae71;
+  border-radius: 15px;
+  width: 100%;
+}
 
 @keyframes App-logo-spin {
   from {

@@ -6,13 +6,14 @@ import "../App.css";
 import Posts from "../components/Posts";
 import Pagination from "../components/Pagination";
 
-// Импорт axios для получения данных с сервера
+// Импорт axios для получения данных с сервера и стилей bootstrap
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Index() {
-  // — state values — //
+import Table from "../components/Table";
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 
+function Index() {
   // Массив записей
   const [posts, setPosts] = useState([]);
   // Загрузка данных
@@ -22,7 +23,7 @@ function Index() {
   // Количество записей на странице
   const [postsPerPage] = useState(5);
 
-  // Get запрос
+  // Запрашиваем данные
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
@@ -44,11 +45,25 @@ function Index() {
   // Изменение номера страницы
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  //  Сохраняем данные из imput
+  const [value, setValue] = useState("");
+
+  // Сравнение value с массивом
+  // const filterPosts = posts.filter((post) => {
+  //   return post.title.toLowerCase().includes(value.toLowerCase());
+  // });
+
   return (
     <div className="container">
-      <input className="main__input" placeholder=""></input>
+      <Table />
+      {/* Отображение компонентов */}
 
-      {/* Передача компонентов */}
+      <input
+        type="text"
+        className="main__input"
+        placeholder=""
+        onChange={(event) => console.log(event.target.value)}
+      ></input>
       <Posts posts={currentPosts} loading={loading}></Posts>
       <Pagination
         postsPerPage={postsPerPage}
