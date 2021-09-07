@@ -1,3 +1,6 @@
+html, body {
+  height: 100%;
+} 
 .App {
   text-align: center;
 }
@@ -44,7 +47,39 @@
   border-radius: 15px;
   width: 100%;
 }
-
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0,0,0,.5);
+  padding-left: 60px !important;
+}
+.menu__navbar {
+background-color: #feebef;
+}
+.main {
+  background-color: #f2f2f2;
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+.page-item.active .page-link{
+  background-color: #feebef;
+}
+.col-md-12 {
+  background-color: #f2f2f2;
+}
+.form-wrapper {
+ width: 50%;
+}
+.items_block {
+  display: flex;
+  max-width: 100% !important;
+}
+p {
+  font-family: Roboto !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #333 !important;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
