@@ -7,38 +7,33 @@ import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 const { SearchBar } = Search;
 
 const products = [
-  { userId: 1, name: "apple", price: 1 },
-  { userId: 2, name: "orange", price: 2 },
-  { userId: 3, name: "banana", price: 3 },
-  { userId: 4, name: "peach", price: 2 },
-  { userId: 5, name: "carrot", price: 1 },
-  { userId: 6, name: "grapes", price: 4 },
-  { userId: 7, name: "mango", price: 1 },
-  { userId: 8, name: "potatoe", price: 3 },
-  { userId: 9, name: "onion", price: 3 },
-  { userId: 10, name: "apple", price: 1 },
-  { userId: 11, name: "apple", price: 1 },
-  { userId: 12, name: "orange", price: 2 },
-  { userId: 13, name: "banana", price: 3 },
-  { userId: 14, name: "peach", price: 2 },
-  { userId: 15, name: "carrot", price: 1 },
-  { userId: 16, name: "grapes", price: 4 },
-  { userId: 17, name: "mango", price: 1 },
-  { userId: 18, name: "potatoe", price: 3 },
-  { userId: 19, name: "apple", price: 1 },
-  { userId: 20, name: "orange", price: 2 },
-  { userId: 21, name: "banana", price: 3 },
-  { userId: 22, name: "peach", price: 2 },
-  { userId: 23, name: "carrot", price: 1 },
-  { userId: 24, name: "grapes", price: 4 },
-  { userId: 25, name: "mango", price: 1 },
-  { userId: 26, name: "potatoe", price: 3 }
+  { userId: 1, title: "apple", body:"bodybody", id: 1 },
+  { userId: 2, title: "orange", body:"bodybody", id: 2 },
+  { userId: 3, title: "banana", body:"bodybody", id: 3 },
+  { userId: 4, title: "peach", body:"bodybody", id: 2 },
+  { userId: 5, title: "carrot", body:"bodybody", id: 1 },
+  { userId: 6, title: "grapes", body:"bodybody", id: 4 },
+  { userId: 7, title: "mango", body:"bodybody", id: 1 },
+  { userId: 8, title: "potatoe", body:"bodybody", id: 3 },
+  { userId: 9, title: "onion", body:"bodybody", id: 3 },
+  { userId: 10, title: "apple", body:"bodybody", id: 1 },
+  { userId: 11, title: "apple", body:"bodybody", id: 1 },
+  { userId: 12, title: "orange", body:"bodybody", id: 2 },
+  { userId: 13, title: "banana", body:"bodybody", id: 3 },
+  { userId: 14, title: "peach", body:"bodybody", id: 2 },
+  { userId: 15, title: "carrot", body:"bodybody", id: 1 },
+  { userId: 16, title: "grapes", body:"bodybody", id: 4 },
+  { userId: 17, title: "mango", body:"bodybody", id: 1 },
+  { userId: 18, title: "potatoe", body:"bodybody", id: 3 },
+  { userId: 19, title: "apple", body:"bodybody", id: 1 },
+  { userId: 20, title: "orange", body:"bodybody", id: 2 },
+  { userId: 21, title: "banana", body:"bodybody", id: 3 },
+  { userId: 22, title: "peach", body:"bodybody", id: 2 },
+  { userId: 23, title: "carrot", body:"bodybody", id: 1 },
+  { userId: 24, title: "grapes", body:"bodybody", id: 4 },
+  { userId: 25, title: "mango", body:"bodybody", id: 1 },
+  { userId: 26, title: "potatoe", body:"bodybody", id: 3 }
 ];
-
-function test(row) {
-  console.log("row value");
-  console.log(row);
-}
 
 const columns = [
   {
@@ -47,71 +42,20 @@ const columns = [
     sort: true
   },
   {
-    dataField: "name",
-    text: "Product Name",
-    sort: true,
+    dataField: "title",
+    text: "title",
     editable: false
   },
   {
-    dataField: "dfd",
-    isDummyField: true,
-    text: "Action 1",
+    dataField: "body",
+    text: " body",
     editable: false,
-    formatter: (cellContent, row, rowIndex, extraData) => {
-      return (
-        <h5>
-          <button className="label label-danger" onClick={() => extraData(row)}>
-            {row.name}
-          </button>
-        </h5>
-      );
-    },
-    formatExtraData: test
   },
   {
-    dataField: "price",
-    text: "Product Price",
+    dataField: "id",
+    text: "id",
     sort: true,
-    editor: {
-      type: Type.SELECT,
-      options: [
-        {
-          value: 1,
-          label: 1
-        },
-        {
-          value: 2,
-          label: 2
-        },
-        {
-          value: 3,
-          label: 3
-        },
-        {
-          value: 4,
-          label: 4
-        },
-        {
-          value: 5,
-          label: 5
-        }
-      ]
-    },
-    validator: (newValue, row, column) => {
-      if (isNaN(newValue)) {
-        return {
-          valid: false,
-          message: "Price should be numeric"
-        };
-      }
-      if (newValue > 5) {
-        return {
-          valid: false,
-          message: "Price should less than 6"
-        };
-      }
-      return true;
-    }
+    editable: false,
   }
 ];
 

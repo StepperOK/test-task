@@ -13,8 +13,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
         <nav className="main__pagination">
             <ul className="pagination justify-content-center">
                 {/* Для каждой страницы получаем элемент списка */}
-
-                {/* Используем bootstrap для красоты*/}
                 {pageNumbers.map(number => (
                     <li key={number} className="page-item">
                         <button onClick={() => paginate(number)} className="page-link pagination__btn">
