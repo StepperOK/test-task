@@ -14,23 +14,35 @@ import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 
 const columns = [
   {
+    dataField: "id",
+    text: "id",
+    editable: false,
+    headerStyle: () => {
+      return { width: "5%", textAlign: "center" };
+    },
+  },
+  {
     dataField: "userId",
     text: "userId",
+    headerStyle: () => {
+      return { width: "7%", textAlign: "center" };
+    },
   },
   {
     dataField: "title",
     text: "title",
     editable: false,
+    headerStyle: () => {
+      return {textAlign: "center" };
+    },
   },
   {
     dataField: "body",
     text: " body",
     editable: false,
-  },
-  {
-    dataField: "id",
-    text: "id",
-    editable: false,
+    headerStyle: () => {
+      return {textAlign: "center" };
+    },
   },
 ];
 function Index() {
@@ -39,7 +51,7 @@ function Index() {
   // Загрузка данных
   const [loading, setLoading] = useState(false);
   // Номер страницы по умолчанию
-  const [currentPage, setCurrentPage] = useState(1);
+
   // Количество записей на странице
   const [postsPerPage] = useState(5);
 
@@ -55,20 +67,11 @@ function Index() {
     fetchPosts();
   }, []);
 
-  // Получение index последней записи
-  const indexOfLastPost = currentPage * postsPerPage;
-  // Получение index первой записи
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  // Получение текущей записи
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  // Изменение номера страницы
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const { SearchBar } = Search;
-  {
+  
     /* Отображение компонентов */
-  }
+  
   return (
     <div className="container">
       <ToolkitProvider search>
@@ -77,6 +80,7 @@ function Index() {
             <SearchBar {...props.searchProps} />
             <hr />
             <BootstrapTable
+            
               striped
               hover
               pagination={paginationFactory({
@@ -88,6 +92,7 @@ function Index() {
               keyField="id"
               data={posts}
               columns={columns}
+              
             />
           </div>
         )}

@@ -18,6 +18,7 @@ const ContactUs = () => {
       <div className="items_block">
         <div className="form-wrapper">
           <div class="col-lg-12 mt-5 mt-lg-0">
+            {/* Добавляем форму */}
             <form
               action="https://formspree.io/f/xeqvkqgk"
               method="POST"
@@ -73,17 +74,18 @@ const ContactUs = () => {
             </form>
           </div>
         </div>
+        {/* Добавляем google карту */}
         <div className="map-wrapper">
           <iframe
+            title="map"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11016323.933427103!2d-122.03372300000001!3d47.615785!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549071f4eb30938b%3A0xb9bf93bd60529844!2zNzA0IDIyOHRoIEF2ZSBORSwgU2FtbWFtaXNoLCBXQSA5ODA3NCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1630935221935!5m2!1sru!2sru"
             width="600"
             height="450"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
           ></iframe>
         </div>
       </div>
-      {/* Тут будет форма обратной связи */}
     </div>
   );
 };

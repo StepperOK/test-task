@@ -31,7 +31,7 @@ class BootstrapNavbar extends React.Component {
                     About
                   </Nav.Link>
                   <Nav.Link className="menu__link" href="/contact-us">
-                    Contact Us
+                    Contact US
                   </Nav.Link>
                 </Nav>
               </Navbar.Collapse>
